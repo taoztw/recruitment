@@ -1,0 +1,27 @@
+<h1 style="margin:auto; width: 50%;">开放职位</h1>
+
+<p></p>
+
+
+{% block header %}
+    <a href="/" style="text-decoration: none; color:#087bff">首页</a>
+    <a href="/joblist" style="text-decoration: none; color:#087bff">职位列表</a>
+
+    {% if user.is_authenticated %}
+        <a href="/accounts/logout" style="text-decoration: none; color:#087bff">退出</a>
+    {% else %}
+        <a href="/accounts/login" style="text-decoration: none; color:#087bff">登录</a>
+    {% endif %}
+    <hr>
+    {% if user.is_authenticated %}
+        <p>你好：{{ user.username }}</p>
+    {% else %}
+        <p>登录后可以提交简历</p>
+    {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% endblock%}

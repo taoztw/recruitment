@@ -1,0 +1,31 @@
+{#<h1>简历提交</h1>#}
+{#<hr>#}
+{#<form method="post">#}
+{##}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="submit" value="提交">#}
+{#</form>#}
+
+
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<h1>简历提交</h1>
+<hr>
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<form method="post" method="post" class="form" enctype="multipart/form-data" style="width:600px;margin-left:5px">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+    {% endbuttons %}
+</form>
